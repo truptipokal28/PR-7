@@ -1,0 +1,41 @@
+<%- include('header') %>
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Layouts</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/index">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Layouts</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+
+      <div class="card col-6 p-4">
+        <form method="post" action="/updatedata" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="<%= record.id %>">
+          <div class="col-6">
+            <label  class="form-label">Name</label>
+            <input type="text" name="name" value="<%=record.name %>" class="form-control mb-4">
+          </div>
+          <div class="col-6">
+            <label   class="form-label">Description</label>
+            <input type="text" name="description" value="<%= record.description%>" class="form-control mb-4">
+          </div>
+          <div class="col-6">
+            <label  name="image" class="form-label">Image</label>
+            <input type="file" name="image"  value="<%=record.image %>" class="form-control mb-4">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <%- include('footer') %>
